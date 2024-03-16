@@ -1,0 +1,39 @@
+def tone():
+    from transformers import pipeline
+
+    # Load zero-shot classification model
+    classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+
+    # Load sentiment analysis model
+    classifier2 = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+
+    # Open the questions file
+    with open('questions.txt', 'r') as question_file:
+        # Read all the lines and remove trailing newline characters
+        questions = [line.strip() for line in question_file]
+
+    score_list = []
+    sentiment_list = []
+
+    # Iterate through each question
+    for question in questions:
+        # Ask the question and get the response
+        peers_response = input(f'{question}: ')
+
+        # Perform zero-shot classification
+        output = classifier(
+            peers_response,
+            candidate_labels=["sad", "happy", "angry"],
+        )
+
+        # Append the classification results for this question to the score_list
+        score_list.extend([f'{label}: {score:.2%}' for label, score in zip(output['labels'], output['scores'])])
+
+        # Append the response to the sentiment_list
+        sentiment_list.append(peers_response)
+
+    # Perform sentiment analysis on all responses
+    sentiment_output = classifier2(sentiment_list)
+    print(score_list)
+
+tone()

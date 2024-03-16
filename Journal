@@ -1,0 +1,45 @@
+from tkinter import *
+from tkinter.filedialog import *
+def notepad():
+
+    
+
+    def saveFile():
+        new_file = asksaveasfile(mode='w', filetype=[('Text files', '.txt')])
+        if new_file is None:
+            return
+        text = entry.get(1.0, END)
+        new_file.write(text)
+        new_file.close()
+
+    def openFile():
+        file = askopenfile(mode='r', filetype=[('Text files', '*.txt')])
+        if file is not None:
+            content = file.read()
+            entry.delete(1.0, END)
+            entry.insert(1.0, content)
+
+    def newFile():
+        entry.delete(1.0, END)
+
+    root = Tk()
+    root.geometry('400x600')
+    root.title('Notepad')
+    root.config(bg='#f0f0f0')  # Change background color
+
+    top = Frame(root, bg='#f0f0f0', padx=10, pady=5)  # Frame for buttons
+    top.pack(anchor='nw')
+
+    b1 = Button(top, text="Open", bg='#e0e0e0', command=openFile)  # Change button color
+    b1.pack(side=LEFT, padx=5, pady=5)
+
+    b2 = Button(top, text="Save", bg='#e0e0e0', command=saveFile)  # Change button color
+    b2.pack(side=LEFT, padx=5, pady=5)
+
+    b3 = Button(top, text="New File", bg='#e0e0e0', command=newFile)  # Change button color
+    b3.pack(side=LEFT, padx=5, pady=5)
+
+    entry = Text(root, wrap=WORD, bg='white', font=('Arial', 12), bd=0)  # Add border
+    entry.pack(padx=10, pady=5, expand=TRUE, fill=BOTH)
+
+    root.mainloop()
