@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check-in Form</title>
+</head>
+<body>
+    <form action="/process_form" method="POST">
+        <div>
+            <label>In a few words, explain how you've felt recently?</label>
+            <input type="text" name="feelings" required>
+        </div>
+        <div>
+            <label>Have you noticed changes in your sleeping patterns?</label>
+            <input type="text" name="sleep" required>
+        </div>
+        <div>
+            <label>If you have negative thoughts, what are they about?</label>
+            <input type="text" name="thoughts">
+        </div>
+        <div>
+            <label>Use three words to describe your mood:</label>
+            <input type="text" name="mood">
+        </div>
+        <div>
+            <label>How would you describe your interactions with others recently?</label>
+            <input type="text" name="interactions" required>
+        </div>
+        <button type="reset">Clear</button>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
