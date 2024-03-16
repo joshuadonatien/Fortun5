@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Minds</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <!--upload logo here *need to create asssets folder*-->
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div></div>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="bx bxs-home-alt-2" size="large"></i>
+                    <span class="nav-item">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="Journal.html">
+                    <i class="bx bxs-food-menu"></i>
+                    <span class="nav-item">Journal</span>
+                </a>
+                <span class="tooltip">Journal</span>
+            </li>
+            <li>
+                <a href="Drawing.html">
+                    <i class="bx bxs-paint"></i>
+                    <span class="nav-item">Drawing</span>
+                </a>
+                <span class="tooltip">Drawing</span>
+            </li>
+            <li>
+                <a href="musicfortun5.html">
+                    <i class="bx bxs-music"></i>
+                    <span class="nav-item">Music</span>
+                </a>
+                <span class="tooltip">Music</span>
+            </li>
+            <li>
+                <a href="Checkin.html">
+                    <i class="bx bxs-check-square"></i>
+                    <span class="nav-item">Check-in</span>
+                </a>
+                <span class="tooltip">Check-in</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content"></div>
+        <div class="container"></div>
+            <!--Home page code here-->
+            <section class="header">
+                <nav>
+                    <a href="index.html"><img src="assets/Free.png"></a>
+        
+                </nav>
+        
+        <div class="textbox">
+            <h1>Mentally Moving Forward</h1>
+            <p>Reforming lives one person at a time with the help of creativity and mental health awareness</p>
+            <a href="Checkin.html" class="hero-btn"> Pay Mind To Mindfulness</a>
+        
+        
+        </div>
+            </section>
+</body>
+
+<script>
+    let btn = document.querySelector("#btn")
+    let sidebar = document.querySelector(".sidebar")
+
+    btn.onclick = function (){
+        sidebar.classList.toggle("active")
+    };
+</script>
+</html>
