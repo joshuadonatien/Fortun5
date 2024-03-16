@@ -77,9 +77,9 @@ label {
 }
 
 select {
-    padding: 8px;
+    padding: 10px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid #ccc;
 }
 
