@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    background-color:white; /* Example background color for the header */
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+}
+
+.textbox {
+    width: 90%;
+    margin: 0 auto; /* Center the .textbox horizontally */
+    color: #333; /* Example text color for the textbox */
+    text-align: center;
+    margin-top: 50px; /* Example margin top for the textbox */
+}
+
+.textbox h1 {
+    font-size: 24px; /* Example font size for the h1 */
+    margin-bottom: 20px; /* Example margin bottom for the h1 */
+}
+
+.textbox p {
+    font-size: 18px; /* Example font size for the p */
+    margin-bottom: 20px; /* Example margin bottom for the p */
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.control-item {
+    flex: 1;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid black; /* Add black border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px; /* Add space between buttons */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
