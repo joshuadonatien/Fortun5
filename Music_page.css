@@ -1,11 +1,16 @@
 *{
     margin: 0;
     padding: 0
+   
 }
-
+.body{ 
+    padding: 10px;
+    text-align: center;
+    
+}
 .header {
     background-color:white; /* Example background color for the header */
-    padding: 20px;
+    padding: 100px;
 }
 
 nav {
@@ -13,35 +18,33 @@ nav {
 }
 
 .textbox {
-    width: 90%;
-    margin: 0 auto; /* Center the .textbox horizontally */
+    width: 50%; /* Adjusted width for the textbox */
+    margin: 1000 auto; /* Center the .textbox horizontally */
     color: #333; /* Example text color for the textbox */
     text-align: center;
+    margin-left: 250px;
     margin-top: 50px; /* Example margin top for the textbox */
+    padding-left: 100px; /* Added left padding to avoid overlap with the sidebar */
 }
 
 .textbox h1 {
+    margin: 10;
     font-size: 24px; /* Example font size for the h1 */
     margin-bottom: 20px; /* Example margin bottom for the h1 */
 }
 
 .textbox p {
     font-size: 18px; /* Example font size for the p */
+    margin: 100px;
     margin-bottom: 20px; /* Example margin bottom for the p */
 }
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
+
 
 h2 {
     text-align: center;
@@ -62,7 +65,7 @@ h2 {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #0ebaee;
     color: white;
     border: 2px solid black; /* Add black border */
     border-radius: 5px;
@@ -72,10 +75,11 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #05f7ff;
 }
 
 label {
+    margin: 80px;
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -86,4 +90,141 @@ select {
     font-size: 14px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.h1{
+    margin: 0px;
+    margin-bottom: 20px
+}
+.container {
+    margin: 0px ; /* Add margin for space between questions */
+    max-width: 0px;
+}
+
+.label {
+
+    display: block;
+    margin-bottom: 10px; /* Add margin bottom for space between labels */
+}
+
+input[type="text"],
+input[type="text"],
+input[type="text"],
+input[type="text"],
+input[type="text"] 
+{
+    width: calc(100% - 20px); /* Adjust width to leave space on the right */
+    margin-left: 80px;
+    padding: 10px; /* Add padding for better appearance */
+    margin-bottom: 10px; /* Add margin bottom for space between input fields */
+}
+
+button[type="reset"],
+button[type="submit"] {
+    margin-top: 10px; /* Add margin top for space between buttons */
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 65px;
+    background-color: rgb(76, 173, 212);
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content{
+   left: 250px;
+   width: calc(100% - 250px);  
+}
+
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar #btn{
+    position: relative;
+    color: white;
+    top: 1rem;
+    left: 60%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%
+}
+
+.sidebar.top.logo{
+    opacity: 0;
+}
+
+.sidebar.active.top.logo{
+    opacity: 1;
+}
+
+.top.logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem; 
+}
+
+.sidebar ul li a:hover{
+    background-color: white;
+    color:rgb(76, 173, 212);
+}
+
+.sidebar ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+.sidebar.nav-item{
+    opacity: 0;
+}
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(76, 173, 212, 0.2);
+    border-radius: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip{
+    opacity: 1;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
 }
