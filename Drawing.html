@@ -1,25 +1,86 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Minds</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Drawing.css">
-    <title>Drawing app</title>
 </head>
 <body>
-    <section class="container">
-        <div id="toolbar">
-            <h1>Draw.</h1>
-            <label for="stroke">Stroke</label>
-            <input id="stroke" name='stroke' type="color">
-            <label for="lineWidth">Line Width</label>
-            <input id="lineWidth" name='lineWidth' type="number" value="5">
-            <button id="clear">Clear</button>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <!--upload logo here *need to create asssets folder*-->
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
         </div>
-        <div class="drawing-board">
-            <canvas id="drawing-board"></canvas>
-        </div>
-    </section>
-    <script src="Drawing.js"></script>
+        <div></div>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="bx bxs-home-alt-2" size="large"></i>
+                    <span class="nav-item">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="Journal.html">
+                    <i class="bx bxs-food-menu"></i>
+                    <span class="nav-item">Journal</span>
+                </a>
+                <span class="tooltip">Journal</span>
+            </li>
+            <li>
+                <a href="Drawing.html">
+                    <i class="bx bxs-paint"></i>
+                    <span class="nav-item">Drawing</span>
+                </a>
+                <span class="tooltip">Drawing</span>
+            </li>
+            <li>
+                <a href="musicfortun5.html">
+                    <i class="bx bxs-music"></i>
+                    <span class="nav-item">Music</span>
+                </a>
+                <span class="tooltip">Music</span>
+            </li>
+            <li>
+                <a href="Checkin.html">
+                    <i class="bx bxs-check-square"></i>
+                    <span class="nav-item">Check-in</span>
+                </a>
+                <span class="tooltip">Check-in</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content"></div>
+        <div class="container"></div>
+            <!--Home page code here-->
+            <section class="container">
+              <div id="toolbar">
+                  <h1>Draw.</h1>
+                  <label for="stroke">Stroke</label>
+                  <input id="stroke" name='stroke' type="color">
+                  <label for="lineWidth">Line Width</label>
+                  <input id="lineWidth" name='lineWidth' type="number" value="5">
+                  <button id="clear">Clear</button>
+              </div>
+              <div class="drawing-board">
+                  <canvas id="drawing-board"></canvas>
+              </div>
+          </section>
+          <script src="Drawing.js"></script>
 </body>
+
+<script>
+    let btn = document.querySelector("#btn")
+    let sidebar = document.querySelector(".sidebar")
+
+    btn.onclick = function (){
+        sidebar.classList.toggle("active")
+    };
+</script>
 </html>
