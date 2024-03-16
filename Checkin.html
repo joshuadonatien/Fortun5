@@ -1,29 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Minds</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <title>Check-in Form</title>
-    </head>
-<form action="results.html" method="GET" enctype="multipart/form-data">
-    <div>
-      <label>In a few words explain how you've felt recently?</label>
-      <input type="text" name="name" id="name" required>
-  </div>
-  <div>
-    <label for="email">Have you noticed changes in your sleeping patterns, such as trouble falling asleep, staying asleep, or sleeping too much?</label>
-    <input type="email" name="email" id="email" required>
-  </div>
-  </div>
-    <label for="phone">If you have negative thoughts what are they about and why?</label>
-    <input type="tel" name="phone" id="phone">
-  </div>
-  <div>
-    <label for="url">Use three words to describe your mood in the current moment?</label>
-    <input type="url" name="url" id="url">
-  </div>
-  <div>
-    <label>
-      How would you describe your interactions with others recently?
-      <input type="password" name="password" required>
-    </label>
-  </div>
-  <button type="reset">Clear</button>
-  <button type="submit">Submit</button>
-</form>
+    <link rel="stylesheet" href="Checkin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <!--upload logo here *need to create asssets folder*-->
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div></div>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="bx bxs-home-alt-2" size="large"></i>
+                    <span class="nav-item">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="Journal.html">
+                    <i class="bx bxs-food-menu"></i>
+                    <span class="nav-item">Journal</span>
+                </a>
+                <span class="tooltip">Journal</span>
+            </li>
+            <li>
+                <a href="Drawing.html">
+                    <i class="bx bxs-paint"></i>
+                    <span class="nav-item">Drawing</span>
+                </a>
+                <span class="tooltip">Drawing</span>
+            </li>
+            <li>
+                <a href="musicfortun5.html">
+                    <i class="bx bxs-music"></i>
+                    <span class="nav-item">Music</span>
+                </a>
+                <span class="tooltip">Music</span>
+            </li>
+            <li>
+                <a href="Checkin.html">
+                    <i class="bx bxs-check-square"></i>
+                    <span class="nav-item">Check-in</span>
+                </a>
+                <span class="tooltip">Check-in</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content"></div>
+        <div class="container"></div>
+            <!--Home page code here-->
+            <form action="results.html" method="GET" enctype="multipart/form-data">
+              <div>
+                <label>In a few words explain how you've felt recently?</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+              <label for="email">Have you noticed changes in your sleeping patterns, such as trouble falling asleep, staying asleep, or sleeping too much?</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            </div>
+              <label for="phone">If you have negative thoughts what are they about and why?</label>
+              <input type="tel" name="phone" id="phone">
+            </div>
+            <div>
+              <label for="url">Use three words to describe your mood in the current moment?</label>
+              <input type="url" name="url" id="url">
+            </div>
+            <div>
+              <label>
+              How would you describe your interactions with others recently?
+                <input type="password" name="password" required>
+              </label>
+            </div>
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+            </form>
+</body>
+
+<script>
+    let btn = document.querySelector("#btn")
+    let sidebar = document.querySelector(".sidebar")
+
+    btn.onclick = function (){
+        sidebar.classList.toggle("active")
+    };
+</script>
+</html>
