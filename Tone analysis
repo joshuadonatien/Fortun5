@@ -27,13 +27,29 @@ def tone():
         )
 
         # Append the classification results for this question to the score_list
-        score_list.extend([f'{label}: {score:.2%}' for label, score in zip(output['labels'], output['scores'])])
+        score_list.append(output)
 
         # Append the response to the sentiment_list
         sentiment_list.append(peers_response)
 
     # Perform sentiment analysis on all responses
     sentiment_output = classifier2(sentiment_list)
-    print(score_list)
+
+    # Calculate the average scores for each label from zero-shot classification
+    avg_scores = {'sad': 0, 'happy': 0, 'angry': 0}
+    for scores in score_list:
+        for label, score in zip(scores['labels'], scores['scores']):
+            avg_scores[label] += score / len(score_list)
+
+    # Overwrite the individual scores with the average values
+    avg_score_list = [f"{label}: {avg_scores[label]:.2%}" for label in avg_scores]
+
+    # Format and print the sentiment output
+    print(sentiment_output)
+
+    # Format and return the average scores for zero-shot classification labels
+    avg_score_list = [f"{label}: {avg_scores[label]:.2%}" for label in avg_scores]
+
+    return avg_score_list 
 
 tone()
